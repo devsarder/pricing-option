@@ -6,13 +6,13 @@ const PriceOption = ({ option }) => {
   const { price, features, name } = option;
   console.log(features);
   return (
-    <div className="bg-gray-200 my-3 p-3 rounded-lg">
+    <div className="bg-gray-200 my-3 p-3 rounded-lg flex flex-col">
       <h2 className="text-2xl text-center">{name}</h2>
       <h3 className="text-center">
         <span className="font bold text-3xl ">Price: {price}$</span>
         <span>/month</span>
       </h3>
-      <ol className="">
+      <ol className=" flex-grow">
         {features.map((feature, idx) => (
           <div className="flex items-center gap-1">
             <IoShieldCheckmarkSharp className="text-green-600"></IoShieldCheckmarkSharp>
@@ -22,6 +22,7 @@ const PriceOption = ({ option }) => {
           </div>
         ))}
       </ol>
+      <button className="w-full py-2 bg-green-400 rounded-md font-semibold text-lg hover:bg-green-600">Buy Now</button>
     </div>
   );
 };
